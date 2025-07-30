@@ -2,13 +2,10 @@ import streamlit as st
 from pdf_loader import extract_text_from_pdf
 from vector_store import create_vector_store
 from rag_chatbot import answer_query
-from dotenv import load_dotenv
-load_dotenv()
-
 import os
+import streamlit as st
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
-# Set your OpenAI API key here (or load from env)
-openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # Streamlit page settings
 st.set_page_config(page_title="Chat with PDF", layout="centered")
